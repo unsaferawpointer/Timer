@@ -7,14 +7,17 @@
 
 import Cocoa
 
-@main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-	
-
+	var statusItem: NSStatusItem?
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
+
+		statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+
+		if let button = statusItem?.button {
+			button.image = NSImage(systemSymbolName: "bolt.fill", accessibilityDescription: "Timer")
+		}
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {

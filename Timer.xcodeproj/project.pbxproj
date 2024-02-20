@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4C9C148B2B85144F00398331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C148A2B85144F00398331 /* AppDelegate.swift */; };
-		4C9C148D2B85144F00398331 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C148C2B85144F00398331 /* ViewController.swift */; };
 		4C9C14902B85144F00398331 /* Timer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C148E2B85144F00398331 /* Timer.xcdatamodeld */; };
 		4C9C14922B85145B00398331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C14912B85145B00398331 /* Assets.xcassets */; };
-		4C9C14952B85145B00398331 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C14932B85145B00398331 /* Main.storyboard */; };
 		4C9C14A02B85145B00398331 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C149F2B85145B00398331 /* TimerTests.swift */; };
 		4C9C14AA2B85145B00398331 /* TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14A92B85145B00398331 /* TimerUITests.swift */; };
 		4C9C14AC2B85145B00398331 /* TimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14AB2B85145B00398331 /* TimerUITestsLaunchTests.swift */; };
+		4C9C14B92B85188E00398331 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14B82B85188E00398331 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +36,15 @@
 /* Begin PBXFileReference section */
 		4C9C14872B85144F00398331 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9C148A2B85144F00398331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C9C148C2B85144F00398331 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C9C148F2B85144F00398331 /* Timer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Timer.xcdatamodel; sourceTree = "<group>"; };
 		4C9C14912B85145B00398331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4C9C14942B85145B00398331 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C9C14962B85145B00398331 /* Timer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timer.entitlements; sourceTree = "<group>"; };
 		4C9C149B2B85145B00398331 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9C149F2B85145B00398331 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		4C9C14A52B85145B00398331 /* TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9C14A92B85145B00398331 /* TimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUITests.swift; sourceTree = "<group>"; };
 		4C9C14AB2B85145B00398331 /* TimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4C9C14B82B85188E00398331 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +95,11 @@
 		4C9C14892B85144F00398331 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				4C9C148A2B85144F00398331 /* AppDelegate.swift */,
-				4C9C148C2B85144F00398331 /* ViewController.swift */,
-				4C9C14912B85145B00398331 /* Assets.xcassets */,
-				4C9C14932B85145B00398331 /* Main.storyboard */,
 				4C9C14962B85145B00398331 /* Timer.entitlements */,
-				4C9C148E2B85144F00398331 /* Timer.xcdatamodeld */,
+				4C9C14B82B85188E00398331 /* main.swift */,
+				4C9C148A2B85144F00398331 /* AppDelegate.swift */,
+				4C9C14BB2B85273D00398331 /* Resource */,
+				4C9C14BA2B85273400398331 /* Services */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -122,6 +119,22 @@
 				4C9C14AB2B85145B00398331 /* TimerUITestsLaunchTests.swift */,
 			);
 			path = TimerUITests;
+			sourceTree = "<group>";
+		};
+		4C9C14BA2B85273400398331 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C148E2B85144F00398331 /* Timer.xcdatamodeld */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4C9C14BB2B85273D00398331 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C14912B85145B00398331 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9C14922B85145B00398331 /* Assets.xcassets in Resources */,
-				4C9C14952B85145B00398331 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C9C148D2B85144F00398331 /* ViewController.swift in Sources */,
 				4C9C14902B85144F00398331 /* Timer.xcdatamodeld in Sources */,
+				4C9C14B92B85188E00398331 /* main.swift in Sources */,
 				4C9C148B2B85144F00398331 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,17 +303,6 @@
 			targetProxy = 4C9C14A62B85145B00398331 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4C9C14932B85145B00398331 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C9C14942B85145B00398331 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4C9C14AD2B85145B00398331 /* Debug */ = {
@@ -434,8 +435,8 @@
 				DEVELOPMENT_TEAM = 48KV35Y6PN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,8 +462,8 @@
 				DEVELOPMENT_TEAM = 48KV35Y6PN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
