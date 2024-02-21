@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 		statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
+		statusItem?.menu = makeMenu()
+
 		if let button = statusItem?.button {
 			button.image = NSImage(systemSymbolName: "bolt.fill", accessibilityDescription: "Timer")
 		}
@@ -127,3 +129,70 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+// MARK: - Helpers
+private extension AppDelegate {
+
+	func makeMenu() -> NSMenu {
+		let menu = NSMenu()
+
+		for period in TimerPeriod.allCases {
+			let item = NSMenuItem()
+			item.title = period.title
+			item.target = self
+			item.action = #selector(menuItemHasBeenClicked(_:))
+			item.representedObject = MenuIdentifier.period(period)
+
+			menu.addItem(item)
+		}
+
+		menu.addItem(.separator())
+
+		let pause = NSMenuItem()
+		pause.title = "Pause"
+		pause.target = self
+		pause.action = #selector(menuItemHasBeenClicked(_:))
+		pause.representedObject = MenuIdentifier.pause
+		pause.keyEquivalent = "p"
+		menu.addItem(pause)
+
+		let resume = NSMenuItem()
+		resume.title = "Resume"
+		resume.target = self
+		resume.action = #selector(menuItemHasBeenClicked(_:))
+		resume.representedObject = MenuIdentifier.resume
+		resume.keyEquivalent = "r"
+		menu.addItem(resume)
+
+		let stop = NSMenuItem()
+		stop.title = "Stop"
+		stop.target = self
+		stop.action = #selector(menuItemHasBeenClicked(_:))
+		stop.representedObject = MenuIdentifier.stop
+		stop.keyEquivalent = "s"
+		menu.addItem(stop)
+
+		menu.addItem(.separator())
+
+		let quit = NSMenuItem()
+		quit.title = "Quit"
+		quit.target = self
+		quit.action = #selector(menuItemHasBeenClicked(_:))
+		quit.representedObject = MenuIdentifier.quit
+		quit.keyEquivalent = "q"
+		menu.addItem(quit)
+
+		return menu
+	}
+}
+
+// MARK: - Actions
+extension AppDelegate {
+
+	@objc
+	func menuItemHasBeenClicked(_ sender: NSMenuItem) {
+		guard let id = sender.representedObject as? MenuIdentifier else {
+			return
+		}
+		// TODO: = Handle action
+	}
+}

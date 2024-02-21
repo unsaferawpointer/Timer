@@ -14,6 +14,8 @@
 		4C9C14AA2B85145B00398331 /* TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14A92B85145B00398331 /* TimerUITests.swift */; };
 		4C9C14AC2B85145B00398331 /* TimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14AB2B85145B00398331 /* TimerUITestsLaunchTests.swift */; };
 		4C9C14B92B85188E00398331 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14B82B85188E00398331 /* main.swift */; };
+		4C9C14BF2B852F5800398331 /* TimerPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14BE2B852F5800398331 /* TimerPeriod.swift */; };
+		4C9C14C12B85331B00398331 /* MenuIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14C02B85331B00398331 /* MenuIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		4C9C14A92B85145B00398331 /* TimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUITests.swift; sourceTree = "<group>"; };
 		4C9C14AB2B85145B00398331 /* TimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4C9C14B82B85188E00398331 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4C9C14BE2B852F5800398331 /* TimerPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPeriod.swift; sourceTree = "<group>"; };
+		4C9C14C02B85331B00398331 /* MenuIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				4C9C14962B85145B00398331 /* Timer.entitlements */,
 				4C9C14B82B85188E00398331 /* main.swift */,
 				4C9C148A2B85144F00398331 /* AppDelegate.swift */,
+				4C9C14C02B85331B00398331 /* MenuIdentifier.swift */,
 				4C9C14BB2B85273D00398331 /* Resource */,
 				4C9C14BA2B85273400398331 /* Services */,
 			);
@@ -124,7 +129,8 @@
 		4C9C14BA2B85273400398331 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4C9C148E2B85144F00398331 /* Timer.xcdatamodeld */,
+				4C9C14BD2B852F4400398331 /* Storage */,
+				4C9C14BC2B852F3D00398331 /* Timer */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,6 +141,22 @@
 				4C9C14912B85145B00398331 /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		4C9C14BC2B852F3D00398331 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C14BE2B852F5800398331 /* TimerPeriod.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		4C9C14BD2B852F4400398331 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C148E2B85144F00398331 /* Timer.xcdatamodeld */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9C14BF2B852F5800398331 /* TimerPeriod.swift in Sources */,
+				4C9C14C12B85331B00398331 /* MenuIdentifier.swift in Sources */,
 				4C9C14902B85144F00398331 /* Timer.xcdatamodeld in Sources */,
 				4C9C14B92B85188E00398331 /* main.swift in Sources */,
 				4C9C148B2B85144F00398331 /* AppDelegate.swift in Sources */,
