@@ -6,6 +6,7 @@
 //
 
 enum MenuIdentifier {
+	case start
 	case pause
 	case resume
 	case stop

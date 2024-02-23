@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TimerPeriod {
+enum TimerPeriod: Int {
 	case fiveMinutes
 	case tenMinutes
 	case fifteenMinutes

@@ -135,17 +135,14 @@ private extension AppDelegate {
 	func makeMenu() -> NSMenu {
 		let menu = NSMenu()
 
-		for period in TimerPeriod.allCases {
-			let item = NSMenuItem()
-			item.title = period.title
-			item.target = self
-			item.action = #selector(menuItemHasBeenClicked(_:))
-			item.representedObject = MenuIdentifier.period(period)
-
-			menu.addItem(item)
-		}
-
-		menu.addItem(.separator())
+		let start = NSMenuItem()
+		start.title = "Start"
+		start.target = self
+		start.action = #selector(menuItemHasBeenClicked(_:))
+		start.representedObject = MenuIdentifier.start
+		start.keyEquivalent = "s"
+		start.image = NSImage(systemSymbolName: "play.fill", accessibilityDescription: nil)
+		menu.addItem(start)
 
 		let pause = NSMenuItem()
 		pause.title = "Pause"
@@ -153,23 +150,24 @@ private extension AppDelegate {
 		pause.action = #selector(menuItemHasBeenClicked(_:))
 		pause.representedObject = MenuIdentifier.pause
 		pause.keyEquivalent = "p"
+		pause.image = NSImage(systemSymbolName: "pause.fill", accessibilityDescription: nil)
 		menu.addItem(pause)
 
-		let resume = NSMenuItem()
-		resume.title = "Resume"
-		resume.target = self
-		resume.action = #selector(menuItemHasBeenClicked(_:))
-		resume.representedObject = MenuIdentifier.resume
-		resume.keyEquivalent = "r"
-		menu.addItem(resume)
+		menu.addItem(.separator())
 
-		let stop = NSMenuItem()
-		stop.title = "Stop"
-		stop.target = self
-		stop.action = #selector(menuItemHasBeenClicked(_:))
-		stop.representedObject = MenuIdentifier.stop
-		stop.keyEquivalent = "s"
-		menu.addItem(stop)
+		let quickTimers = NSMenuItem.sectionHeader(title: "Quick timers")
+		menu.addItem(quickTimers)
+
+		for period in TimerPeriod.allCases {
+			let item = NSMenuItem()
+			item.title = period.title
+			item.target = self
+			item.action = #selector(menuItemHasBeenClicked(_:))
+			item.representedObject = MenuIdentifier.period(period)
+			item.indentationLevel = 0
+			item.keyEquivalent = "\(period.rawValue)"
+			menu.addItem(item)
+		}
 
 		menu.addItem(.separator())
 
