@@ -6,10 +6,11 @@
 //
 
 enum MenuIdentifier {
-	case start
-	case pause
-	case resume
+	case pauseResume
 	case stop
-	case quit
 	case period(_ value: TimerPeriod)
+	case quit
 }
+
+// MARK: - Equatable
+extension MenuIdentifier: Equatable { }

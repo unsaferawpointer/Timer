@@ -16,6 +16,14 @@
 		4C9C14B92B85188E00398331 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14B82B85188E00398331 /* main.swift */; };
 		4C9C14BF2B852F5800398331 /* TimerPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14BE2B852F5800398331 /* TimerPeriod.swift */; };
 		4C9C14C12B85331B00398331 /* MenuIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14C02B85331B00398331 /* MenuIdentifier.swift */; };
+		4C9C14D02B88E94800398331 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14CF2B88E94800398331 /* TimerState.swift */; };
+		4C9C14D22B88EC3D00398331 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14D12B88EC3D00398331 /* TimerService.swift */; };
+		4C9C14D42B89259F00398331 /* MenubarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14D32B89259F00398331 /* MenubarPresenter.swift */; };
+		4C9C14D72B89267100398331 /* MenubarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14D62B89267100398331 /* MenubarView.swift */; };
+		4C9C14D92B89272700398331 /* MenubarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14D82B89272700398331 /* MenubarAssembly.swift */; };
+		4C9C14DB2B89E50700398331 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14DA2B89E50700398331 /* AppCoordinator.swift */; };
+		4C9C14DD2B8A012C00398331 /* ApplicationFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14DC2B8A012C00398331 /* ApplicationFacade.swift */; };
+		4C9C14FD2B8B335600398331 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14FC2B8B335600398331 /* ItemsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		4C9C14B82B85188E00398331 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4C9C14BE2B852F5800398331 /* TimerPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPeriod.swift; sourceTree = "<group>"; };
 		4C9C14C02B85331B00398331 /* MenuIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuIdentifier.swift; sourceTree = "<group>"; };
+		4C9C14CF2B88E94800398331 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
+		4C9C14D12B88EC3D00398331 /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		4C9C14D32B89259F00398331 /* MenubarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarPresenter.swift; sourceTree = "<group>"; };
+		4C9C14D62B89267100398331 /* MenubarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarView.swift; sourceTree = "<group>"; };
+		4C9C14D82B89272700398331 /* MenubarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarAssembly.swift; sourceTree = "<group>"; };
+		4C9C14DA2B89E50700398331 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4C9C14DC2B8A012C00398331 /* ApplicationFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFacade.swift; sourceTree = "<group>"; };
+		4C9C14FC2B8B335600398331 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +115,11 @@
 		4C9C14892B85144F00398331 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				4C9C14962B85145B00398331 /* Timer.entitlements */,
 				4C9C14B82B85188E00398331 /* main.swift */,
+				4C9C14962B85145B00398331 /* Timer.entitlements */,
 				4C9C148A2B85144F00398331 /* AppDelegate.swift */,
-				4C9C14C02B85331B00398331 /* MenuIdentifier.swift */,
+				4C9C14DA2B89E50700398331 /* AppCoordinator.swift */,
+				4C9C14D52B8925D700398331 /* Menubar */,
 				4C9C14BB2B85273D00398331 /* Resource */,
 				4C9C14BA2B85273400398331 /* Services */,
 			);
@@ -147,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				4C9C14BE2B852F5800398331 /* TimerPeriod.swift */,
+				4C9C14CF2B88E94800398331 /* TimerState.swift */,
+				4C9C14D12B88EC3D00398331 /* TimerService.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -157,6 +176,19 @@
 				4C9C148E2B85144F00398331 /* Timer.xcdatamodeld */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		4C9C14D52B8925D700398331 /* Menubar */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C14D62B89267100398331 /* MenubarView.swift */,
+				4C9C14D32B89259F00398331 /* MenubarPresenter.swift */,
+				4C9C14D82B89272700398331 /* MenubarAssembly.swift */,
+				4C9C14C02B85331B00398331 /* MenuIdentifier.swift */,
+				4C9C14DC2B8A012C00398331 /* ApplicationFacade.swift */,
+				4C9C14FC2B8B335600398331 /* ItemsFactory.swift */,
+			);
+			path = Menubar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,10 +320,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9C14FD2B8B335600398331 /* ItemsFactory.swift in Sources */,
+				4C9C14DB2B89E50700398331 /* AppCoordinator.swift in Sources */,
 				4C9C14BF2B852F5800398331 /* TimerPeriod.swift in Sources */,
+				4C9C14D02B88E94800398331 /* TimerState.swift in Sources */,
+				4C9C14D72B89267100398331 /* MenubarView.swift in Sources */,
+				4C9C14DD2B8A012C00398331 /* ApplicationFacade.swift in Sources */,
 				4C9C14C12B85331B00398331 /* MenuIdentifier.swift in Sources */,
 				4C9C14902B85144F00398331 /* Timer.xcdatamodeld in Sources */,
+				4C9C14D22B88EC3D00398331 /* TimerService.swift in Sources */,
+				4C9C14D92B89272700398331 /* MenubarAssembly.swift in Sources */,
 				4C9C14B92B85188E00398331 /* main.swift in Sources */,
+				4C9C14D42B89259F00398331 /* MenubarPresenter.swift in Sources */,
 				4C9C148B2B85144F00398331 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

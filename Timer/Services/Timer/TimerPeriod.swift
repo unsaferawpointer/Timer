@@ -22,6 +22,28 @@ extension TimerPeriod: CaseIterable { }
 
 extension TimerPeriod {
 
+	var interval: TimeInterval {
+		switch self {
+		case .fiveMinutes:
+			return 5 * 60
+		case .tenMinutes:
+			return 10 * 60
+		case .fifteenMinutes:
+			return 15 * 60
+		case .twentyMinutes:
+			return 20 * 60
+		case .twentyFiveMinutes:
+			return 25 * 60
+		case .thirtyMinutes:
+			return 30 * 60
+		case .oneHour:
+			return 60 * 60
+		}
+	}
+}
+
+extension TimerPeriod {
+
 	var title: String {
 		switch self {
 		case .fiveMinutes: 			"5 minutes"

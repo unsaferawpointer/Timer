@@ -9,17 +9,11 @@ import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-	var statusItem: NSStatusItem?
+	var view: MenubarView?
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-		statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-
-		statusItem?.menu = makeMenu()
-
-		if let button = statusItem?.button {
-			button.image = NSImage(systemSymbolName: "bolt.fill", accessibilityDescription: "Timer")
-		}
+		self.view = MenubarAssembly.assemble()
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -127,70 +121,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	    return .terminateNow
 	}
 
-}
-
-// MARK: - Helpers
-private extension AppDelegate {
-
-	func makeMenu() -> NSMenu {
-		let menu = NSMenu()
-
-		let start = NSMenuItem()
-		start.title = "Start"
-		start.target = self
-		start.action = #selector(menuItemHasBeenClicked(_:))
-		start.representedObject = MenuIdentifier.start
-		start.keyEquivalent = "s"
-		start.image = NSImage(systemSymbolName: "play.fill", accessibilityDescription: nil)
-		menu.addItem(start)
-
-		let pause = NSMenuItem()
-		pause.title = "Pause"
-		pause.target = self
-		pause.action = #selector(menuItemHasBeenClicked(_:))
-		pause.representedObject = MenuIdentifier.pause
-		pause.keyEquivalent = "p"
-		pause.image = NSImage(systemSymbolName: "pause.fill", accessibilityDescription: nil)
-		menu.addItem(pause)
-
-		menu.addItem(.separator())
-
-		let quickTimers = NSMenuItem.sectionHeader(title: "Quick timers")
-		menu.addItem(quickTimers)
-
-		for period in TimerPeriod.allCases {
-			let item = NSMenuItem()
-			item.title = period.title
-			item.target = self
-			item.action = #selector(menuItemHasBeenClicked(_:))
-			item.representedObject = MenuIdentifier.period(period)
-			item.indentationLevel = 0
-			item.keyEquivalent = "\(period.rawValue)"
-			menu.addItem(item)
-		}
-
-		menu.addItem(.separator())
-
-		let quit = NSMenuItem()
-		quit.title = "Quit"
-		quit.target = self
-		quit.action = #selector(menuItemHasBeenClicked(_:))
-		quit.representedObject = MenuIdentifier.quit
-		quit.keyEquivalent = "q"
-		menu.addItem(quit)
-
-		return menu
-	}
-}
-
-// MARK: - Actions
-extension AppDelegate {
-
-	@objc
-	func menuItemHasBeenClicked(_ sender: NSMenuItem) {
-		guard let id = sender.representedObject as? MenuIdentifier else {
-			return
-		}
-		// TODO: = Handle action
-	}
 }
