@@ -44,9 +44,8 @@ final class TimerService {
 extension TimerService: TimerServiceProtocol {
 
 	func start(with period: TimerPeriod) {
+		stop()
 		self.state = .active(start: Date(), remainingTime: period.interval)
-		self.timer?.invalidate()
-		self.timer = nil
 		self.timer = makeTimer()
 	}
 

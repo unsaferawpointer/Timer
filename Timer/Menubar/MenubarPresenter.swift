@@ -10,15 +10,15 @@ import Foundation
 protocol MenubarPresenterProtocol {
 	func menuWillOpen()
 	func menuItemHasBeenClicked(_ id: MenuIdentifier)
+	func timerDidChange(state: TimerState)
+	func presentStatistics(_ interval: TimeInterval)
 }
 
 final class MenubarPresenter {
 
-	var timer: TimerServiceProtocol
+	var interactor: MenubarInteractorProtocol?
 
 	var menubar: MenubarViewProtocol?
-
-	var applicationFacade: ApplicationFacadeProtocol
 
 	var itemsFactory: ItemsFactoryProtocol
 
@@ -34,20 +34,37 @@ final class MenubarPresenter {
 	// MARK: - Initialization
 
 	init(
-		timer: TimerServiceProtocol,
-		applicationFacade: ApplicationFacadeProtocol,
 		itemsFactory: ItemsFactoryProtocol
 	) {
-		self.timer = timer
-		self.applicationFacade = applicationFacade
 		self.itemsFactory = itemsFactory
-
-		self.timer.delegate = self
 	}
 }
 
-// MARK: - TimerServiceDelegate
-extension MenubarPresenter: TimerServiceDelegate {
+// MARK: - MenubarPresenterProtocol
+extension MenubarPresenter: MenubarPresenterProtocol {
+
+	func presentStatistics(_ interval: TimeInterval) {
+		menubar?.configure(.today, withItem: itemsFactory.makeTotalToday(interval: interval))
+	}
+
+	func menuWillOpen() {
+		interactor?.fetchData()
+	}
+
+	func menuItemHasBeenClicked(_ id: MenuIdentifier) {
+		switch id {
+		case .stop:
+			interactor?.stop()
+		case .pauseResume:
+			interactor?.pauseResume()
+		case .period(let value):
+			interactor?.start(with: value)
+		case .quit:
+			interactor?.quit()
+		case .today:
+			assertionFailure("Not supported")
+		}
+	}
 
 	func timerDidChange(state: TimerState) {
 		var title: String?
@@ -67,33 +84,5 @@ extension MenubarPresenter: TimerServiceDelegate {
 			menubar?.configure(.pauseResume, withItem: itemsFactory.makePause(isEnabled: false))
 		}
 		menubar?.configureButton(title: title ?? "", iconName: "bolt.fill")
-	}
-	
-	func timerHasBeenFinished(start: Date, end: Date, reason: Reason) {
-		guard case .timeHasExpired = reason else {
-			return
-		}
-		applicationFacade.playSound()
-	}
-}
-
-// MARK: - MenubarPresenterProtocol
-extension MenubarPresenter: MenubarPresenterProtocol {
-
-	func menuWillOpen() {
-		timerDidChange(state: timer.state)
-	}
-
-	func menuItemHasBeenClicked(_ id: MenuIdentifier) {
-		switch id {
-		case .stop:
-			timer.stop()
-		case .pauseResume:
-			timer.pauseResume()
-		case .period(let value):
-			timer.start(with: value)
-		case .quit:
-			applicationFacade.quit()
-		}
 	}
 }

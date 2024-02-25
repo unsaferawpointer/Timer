@@ -24,6 +24,12 @@
 		4C9C14DB2B89E50700398331 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14DA2B89E50700398331 /* AppCoordinator.swift */; };
 		4C9C14DD2B8A012C00398331 /* ApplicationFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14DC2B8A012C00398331 /* ApplicationFacade.swift */; };
 		4C9C14FD2B8B335600398331 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14FC2B8B335600398331 /* ItemsFactory.swift */; };
+		4C9C15002B8B525A00398331 /* SessionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14FE2B8B525A00398331 /* SessionEntity+CoreDataClass.swift */; };
+		4C9C15012B8B525A00398331 /* SessionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C14FF2B8B525A00398331 /* SessionEntity+CoreDataProperties.swift */; };
+		4C9C15032B8B567300398331 /* SessionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15022B8B567300398331 /* SessionsProvider.swift */; };
+		4C9C15062B8B56F500398331 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15052B8B56F500398331 /* Session.swift */; };
+		4C9C15082B8B81A300398331 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15072B8B81A300398331 /* DateManager.swift */; };
+		4C9C150A2B8B874F00398331 /* MenubarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15092B8B874F00398331 /* MenubarInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,12 @@
 		4C9C14DA2B89E50700398331 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4C9C14DC2B8A012C00398331 /* ApplicationFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFacade.swift; sourceTree = "<group>"; };
 		4C9C14FC2B8B335600398331 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
+		4C9C14FE2B8B525A00398331 /* SessionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C9C14FF2B8B525A00398331 /* SessionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4C9C15022B8B567300398331 /* SessionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsProvider.swift; sourceTree = "<group>"; };
+		4C9C15052B8B56F500398331 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		4C9C15072B8B81A300398331 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		4C9C15092B8B874F00398331 /* MenubarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +131,7 @@
 				4C9C14962B85145B00398331 /* Timer.entitlements */,
 				4C9C148A2B85144F00398331 /* AppDelegate.swift */,
 				4C9C14DA2B89E50700398331 /* AppCoordinator.swift */,
+				4C9C15042B8B56E800398331 /* Models */,
 				4C9C14D52B8925D700398331 /* Menubar */,
 				4C9C14BB2B85273D00398331 /* Resource */,
 				4C9C14BA2B85273400398331 /* Services */,
@@ -174,6 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				4C9C148E2B85144F00398331 /* Timer.xcdatamodeld */,
+				4C9C14FE2B8B525A00398331 /* SessionEntity+CoreDataClass.swift */,
+				4C9C14FF2B8B525A00398331 /* SessionEntity+CoreDataProperties.swift */,
+				4C9C15022B8B567300398331 /* SessionsProvider.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -183,12 +199,22 @@
 			children = (
 				4C9C14D62B89267100398331 /* MenubarView.swift */,
 				4C9C14D32B89259F00398331 /* MenubarPresenter.swift */,
+				4C9C15092B8B874F00398331 /* MenubarInteractor.swift */,
 				4C9C14D82B89272700398331 /* MenubarAssembly.swift */,
 				4C9C14C02B85331B00398331 /* MenuIdentifier.swift */,
 				4C9C14DC2B8A012C00398331 /* ApplicationFacade.swift */,
 				4C9C14FC2B8B335600398331 /* ItemsFactory.swift */,
+				4C9C15072B8B81A300398331 /* DateManager.swift */,
 			);
 			path = Menubar;
+			sourceTree = "<group>";
+		};
+		4C9C15042B8B56E800398331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C15052B8B56F500398331 /* Session.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,17 +347,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9C14FD2B8B335600398331 /* ItemsFactory.swift in Sources */,
+				4C9C15062B8B56F500398331 /* Session.swift in Sources */,
 				4C9C14DB2B89E50700398331 /* AppCoordinator.swift in Sources */,
 				4C9C14BF2B852F5800398331 /* TimerPeriod.swift in Sources */,
+				4C9C15032B8B567300398331 /* SessionsProvider.swift in Sources */,
 				4C9C14D02B88E94800398331 /* TimerState.swift in Sources */,
 				4C9C14D72B89267100398331 /* MenubarView.swift in Sources */,
 				4C9C14DD2B8A012C00398331 /* ApplicationFacade.swift in Sources */,
 				4C9C14C12B85331B00398331 /* MenuIdentifier.swift in Sources */,
 				4C9C14902B85144F00398331 /* Timer.xcdatamodeld in Sources */,
 				4C9C14D22B88EC3D00398331 /* TimerService.swift in Sources */,
+				4C9C15082B8B81A300398331 /* DateManager.swift in Sources */,
 				4C9C14D92B89272700398331 /* MenubarAssembly.swift in Sources */,
 				4C9C14B92B85188E00398331 /* main.swift in Sources */,
+				4C9C150A2B8B874F00398331 /* MenubarInteractor.swift in Sources */,
+				4C9C15002B8B525A00398331 /* SessionEntity+CoreDataClass.swift in Sources */,
 				4C9C14D42B89259F00398331 /* MenubarPresenter.swift in Sources */,
+				4C9C15012B8B525A00398331 /* SessionEntity+CoreDataProperties.swift in Sources */,
 				4C9C148B2B85144F00398331 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -100,6 +100,15 @@ private extension MenubarView {
 	func makeMenu() -> NSMenu {
 		let menu = NSMenu()
 
+		let todayStatistics = NSMenuItem.sectionHeader(title: "Total Today")
+		menu.addItem(todayStatistics)
+
+		let today = NSMenuItem()
+		today.representedObject = MenuIdentifier.today
+		menu.addItem(today)
+
+		menu.addItem(.separator())
+
 		let quickTimers = NSMenuItem.sectionHeader(title: "Quick timers")
 		menu.addItem(quickTimers)
 
@@ -116,6 +125,9 @@ private extension MenubarView {
 
 		menu.addItem(.separator())
 
+		let controls = NSMenuItem.sectionHeader(title: "Controls")
+		menu.addItem(controls)
+
 		let stop = NSMenuItem()
 		stop.title = "Start"
 		stop.target = self
@@ -123,6 +135,7 @@ private extension MenubarView {
 		stop.representedObject = MenuIdentifier.stop
 		stop.keyEquivalent = "s"
 		stop.image = NSImage(systemSymbolName: "stop.fill", accessibilityDescription: nil)
+		stop.indentationLevel = 0
 		menu.addItem(stop)
 
 		let pauseResume = NSMenuItem()
@@ -132,6 +145,7 @@ private extension MenubarView {
 		pauseResume.representedObject = MenuIdentifier.pauseResume
 		pauseResume.keyEquivalent = "p"
 		pauseResume.image = NSImage(systemSymbolName: "pause.fill", accessibilityDescription: nil)
+		pauseResume.indentationLevel = 0
 		menu.addItem(pauseResume)
 
 		menu.addItem(.separator())

@@ -18,11 +18,17 @@ final class MenubarAssembly {
 			button.font = NSFont.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
 		}
 
-		let presenter = MenubarPresenter(
+		let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+
+		let interactor = MenubarInteractor(
 			timer: TimerService(),
+			sessionsProvider: SessionsProvider(context: context!),
 			applicationFacade: ApplicationFacade(),
-			itemsFactory: ItemsFactory()
+			dateManager: DateManager()
 		)
+		let presenter = MenubarPresenter(itemsFactory: ItemsFactory())
+		presenter.interactor = interactor
+		interactor.presenter = presenter
 		let menubar = MenubarView(statusItem)
 		presenter.menubar = menubar
 		menubar.output = presenter

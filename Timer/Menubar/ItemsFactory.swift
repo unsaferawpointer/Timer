@@ -11,9 +11,21 @@ protocol ItemsFactoryProtocol {
 	func makeStopItem(isEnabled: Bool) -> ItemContent
 	func makePause(isEnabled: Bool) -> ItemContent
 	func makeResume(isEnabled: Bool) -> ItemContent
+	func makeTotalToday(interval: TimeInterval) -> ItemContent
 }
 
-final class ItemsFactory { }
+final class ItemsFactory { 
+
+	lazy var formatter: DateComponentsFormatter = {
+		let formatter = DateComponentsFormatter()
+		formatter.unitsStyle = .positional
+		formatter.zeroFormattingBehavior = .pad
+		formatter.allowedUnits = [.second, .minute, .hour]
+
+		return formatter
+	}()
+
+}
 
 // MARK: - ItemsFactoryProtocol
 extension ItemsFactory: ItemsFactoryProtocol {
@@ -41,6 +53,16 @@ extension ItemsFactory: ItemsFactoryProtocol {
 			title: "Resume",
 			iconName: "forward.end",
 			isEnabled: isEnabled
+		)
+		return content
+	}
+
+	func makeTotalToday(interval: TimeInterval) -> ItemContent {
+		let formattedTime = formatter.string(from: interval) ?? ""
+		let content = ItemContent(
+			title: formattedTime,
+			iconName: nil,
+			isEnabled: false
 		)
 		return content
 	}
