@@ -12,6 +12,7 @@ enum MenuIdentifier {
 	case stop
 	case period(_ value: TimerPeriod)
 	case today
+	case settings
 	case quit
 }
 

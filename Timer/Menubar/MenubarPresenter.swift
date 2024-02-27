@@ -22,6 +22,8 @@ final class MenubarPresenter {
 
 	var itemsFactory: ItemsFactoryProtocol
 
+	weak var output: MenubarOutput?
+
 	lazy var formatter: DateComponentsFormatter = {
 		let formatter = DateComponentsFormatter()
 		formatter.unitsStyle = .positional
@@ -34,9 +36,11 @@ final class MenubarPresenter {
 	// MARK: - Initialization
 
 	init(
-		itemsFactory: ItemsFactoryProtocol
+		itemsFactory: ItemsFactoryProtocol,
+		output: MenubarOutput
 	) {
 		self.itemsFactory = itemsFactory
+		self.output = output
 	}
 }
 
@@ -63,6 +67,8 @@ extension MenubarPresenter: MenubarPresenterProtocol {
 			interactor?.quit()
 		case .today:
 			assertionFailure("Not supported")
+		case .settings:
+			output?.showSettings()
 		}
 	}
 

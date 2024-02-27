@@ -9,7 +9,7 @@ import AppKit
 
 final class MenubarAssembly {
 
-	static func assemble() -> MenubarView {
+	static func assemble(output: MenubarOutput) -> MenubarView {
 
 		let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
@@ -26,7 +26,7 @@ final class MenubarAssembly {
 			applicationFacade: ApplicationFacade(),
 			dateManager: DateManager()
 		)
-		let presenter = MenubarPresenter(itemsFactory: ItemsFactory())
+		let presenter = MenubarPresenter(itemsFactory: ItemsFactory(), output: output)
 		presenter.interactor = interactor
 		interactor.presenter = presenter
 		let menubar = MenubarView(statusItem)

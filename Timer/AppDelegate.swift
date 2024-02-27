@@ -11,9 +11,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	var view: MenubarView?
 
+	var isShowed: Bool = false
+
+	var settingsWindow: NSWindow?
+
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-		self.view = MenubarAssembly.assemble()
+		self.view = MenubarAssembly.assemble(output: self)
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -121,4 +125,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	    return .terminateNow
 	}
 
+}
+
+// MARK: - MenubarOutput
+extension AppDelegate: MenubarOutput {
+
+	func showSettings() {
+		guard settingsWindow == nil else {
+			settingsWindow?.makeKeyAndOrderFront(self)
+			return
+		}
+
+		let content = SettingsAssembly.assemble()
+		let window = NSWindow(contentViewController: content)
+		window.makeKeyAndOrderFront(self)
+		window.delegate = self
+
+		self.settingsWindow = window
+	}
+}
+
+// MARK: - NSWindowDelegate
+extension AppDelegate: NSWindowDelegate {
+
+	func windowWillClose(_ notification: Notification) {
+		settingsWindow = nil
+	}
 }

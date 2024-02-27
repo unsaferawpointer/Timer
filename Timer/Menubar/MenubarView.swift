@@ -150,6 +150,17 @@ private extension MenubarView {
 
 		menu.addItem(.separator())
 
+		let settings = NSMenuItem()
+		settings.title = "Settings..."
+		settings.target = self
+		settings.action = #selector(menuItemHasBeenClicked(_:))
+		settings.representedObject = MenuIdentifier.settings
+		settings.keyEquivalent = ","
+		settings.indentationLevel = 0
+		menu.addItem(settings)
+
+		menu.addItem(.separator())
+
 		let quit = NSMenuItem()
 		quit.title = "Quit"
 		quit.target = self
