@@ -31,6 +31,10 @@
 		4C9C150A2B8B874F00398331 /* MenubarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15092B8B874F00398331 /* MenubarInteractor.swift */; };
 		4C9C150F2B8CB14500398331 /* MenubarOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C150E2B8CB14500398331 /* MenubarOutput.swift */; };
 		4C9C15112B8D0A1600398331 /* SettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15102B8D0A1600398331 /* SettingsAssembly.swift */; };
+		4C9C15142B8E81D300398331 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15132B8E81D300398331 /* ActivitiesViewController.swift */; };
+		4C9C15182B8FB5A500398331 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15172B8FB5A500398331 /* ActivityModel.swift */; };
+		4C9C151A2B8FB84900398331 /* ActivitiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C15192B8FB84900398331 /* ActivitiesPresenter.swift */; };
+		4C9C151C2B8FB96D00398331 /* ActivitiesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C151B2B8FB96D00398331 /* ActivitiesAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		4C9C15092B8B874F00398331 /* MenubarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarInteractor.swift; sourceTree = "<group>"; };
 		4C9C150E2B8CB14500398331 /* MenubarOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarOutput.swift; sourceTree = "<group>"; };
 		4C9C15102B8D0A1600398331 /* SettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembly.swift; sourceTree = "<group>"; };
+		4C9C15132B8E81D300398331 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		4C9C15172B8FB5A500398331 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		4C9C15192B8FB84900398331 /* ActivitiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesPresenter.swift; sourceTree = "<group>"; };
+		4C9C151B2B8FB96D00398331 /* ActivitiesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +232,20 @@
 			isa = PBXGroup;
 			children = (
 				4C9C15102B8D0A1600398331 /* SettingsAssembly.swift */,
+				4C9C15122B8E81B300398331 /* Activities */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		4C9C15122B8E81B300398331 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C15172B8FB5A500398331 /* ActivityModel.swift */,
+				4C9C151B2B8FB96D00398331 /* ActivitiesAssembly.swift */,
+				4C9C15192B8FB84900398331 /* ActivitiesPresenter.swift */,
+				4C9C15132B8E81D300398331 /* ActivitiesViewController.swift */,
+			);
+			path = Activities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,14 +385,18 @@
 				4C9C14D72B89267100398331 /* MenubarView.swift in Sources */,
 				4C9C14DD2B8A012C00398331 /* ApplicationFacade.swift in Sources */,
 				4C9C14C12B85331B00398331 /* MenuIdentifier.swift in Sources */,
+				4C9C15182B8FB5A500398331 /* ActivityModel.swift in Sources */,
 				4C9C14902B85144F00398331 /* Timer.xcdatamodeld in Sources */,
 				4C9C14D22B88EC3D00398331 /* TimerService.swift in Sources */,
+				4C9C15142B8E81D300398331 /* ActivitiesViewController.swift in Sources */,
 				4C9C15082B8B81A300398331 /* DateManager.swift in Sources */,
 				4C9C150F2B8CB14500398331 /* MenubarOutput.swift in Sources */,
 				4C9C14D92B89272700398331 /* MenubarAssembly.swift in Sources */,
 				4C9C14B92B85188E00398331 /* main.swift in Sources */,
+				4C9C151C2B8FB96D00398331 /* ActivitiesAssembly.swift in Sources */,
 				4C9C15112B8D0A1600398331 /* SettingsAssembly.swift in Sources */,
 				4C9C150A2B8B874F00398331 /* MenubarInteractor.swift in Sources */,
+				4C9C151A2B8FB84900398331 /* ActivitiesPresenter.swift in Sources */,
 				4C9C15002B8B525A00398331 /* SessionEntity+CoreDataClass.swift in Sources */,
 				4C9C14D42B89259F00398331 /* MenubarPresenter.swift in Sources */,
 				4C9C15012B8B525A00398331 /* SessionEntity+CoreDataProperties.swift in Sources */,

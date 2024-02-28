@@ -17,7 +17,7 @@ final class SettingsAssembly {
 
 		viewController.title = "Settings"
 
-		let item = NSTabViewItem(viewController: NSViewController())
+		let item = NSTabViewItem(viewController: ActivitiesAssembly.assemble())
 		item.label = "Activities"
 		item.image = NSImage(systemSymbolName: "list.bullet.rectangle", accessibilityDescription: nil)
 
